@@ -1,5 +1,5 @@
 repeat task.wait() until game:IsLoaded()
-ZeroDay
+
 local lib = {
     ["Rainbow"] = true,
     ["Notifications"] = false,
@@ -8,7 +8,9 @@ local lib = {
     ["IsDraggable"] = true,
     ["Objects"] = {}
 }
-
+if isfolder("ZeroDay") == false then
+    makefolder("ZeroDay")
+end
 if isfolder("ZeroDay") == false then
     makefolder("ZeroDay")
 end
@@ -84,7 +86,7 @@ ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 local ScreenGuitwo = Instance.new("ScreenGui")
 ScreenGuitwo.Parent = game:WaitForChild("CoreGui")
 ScreenGuitwo.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-ScreenGuitwo.Name = "ZeroDayNotificationGui"
+ScreenGuitwo.Name = "RektskyNotificationGui"
 local getasset = getsynasset or getcustomasset
 
 local requestfunc = syn and syn.request or http and http.request or http_request or fluxus and fluxus.request or request or function(tab)
@@ -232,7 +234,7 @@ local function createnotification(title, text, delay2, toggled)
         end)
     end)
 end
-
+createnotification("Loaded", "Press Right-Shift to toggle GUI", 3, true)
 local function dragGUI(gui, dragpart)
     spawn(function()
         local dragging
