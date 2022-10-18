@@ -1,24 +1,7 @@
 repeat task.wait() until game:IsLoaded()
 
-
-local ScreenGui = Instance.new("ScreenGui")
-local ImageLabel = Instance.new("ImageLabel")
-local TextLabel = Instance.new("TextLabel")
-
---Properties:
-
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
-ImageLabel.Parent = ScreenGui
-ImageLabel.BackgroundColor3 = Color3.fromRGB(254, 255, 255)
-ImageLabel.BackgroundTransparency = 1.000
-ImageLabel.Position = UDim2.new(0.0109395115, 0, 0.0209876541, 0)
-ImageLabel.Size = UDim2.new(0, 239, 0, 59)
-ImageLabel.Image = "rbxassetid://11312886357"
-
 local lib = {
-    ["Rainbow"] = true,
+    ["Rainbow"] = false,
     ["Notifications"] = false,
     ["Sounds"] = true,
     ["GuiKeybind"] = "RightShift",
@@ -251,7 +234,7 @@ local function createnotification(title, text, delay2, toggled)
         end)
     end)
 end
-createnotification("Loaded", "Press Right-Shift to toggle GUI", 3, true)
+
 local function dragGUI(gui, dragpart)
     spawn(function()
         local dragging
