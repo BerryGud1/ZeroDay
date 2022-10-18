@@ -1,5 +1,33 @@
 repeat task.wait() until game:IsLoaded()
 
+
+local ScreenGui = Instance.new("ScreenGui")
+local ImageLabel = Instance.new("ImageLabel")
+local TextLabel = Instance.new("TextLabel")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+ImageLabel.Parent = ScreenGui
+ImageLabel.BackgroundColor3 = Color3.fromRGB(254, 255, 255)
+ImageLabel.BackgroundTransparency = 1.000
+ImageLabel.Position = UDim2.new(0.0109395115, 0, 0.0209876541, 0)
+ImageLabel.Size = UDim2.new(0, 239, 0, 59)
+ImageLabel.Image = "rbxassetid://11312886357"
+
+TextLabel.Parent = ScreenGui
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderColor3 = Color3.fromRGB(27, 42, 53)
+TextLabel.Position = UDim2.new(0.115830123, 0, 0.0123456791, 0)
+TextLabel.Size = UDim2.new(0, 203, 0, 25)
+TextLabel.Font = Enum.Font.Unknown
+TextLabel.Text = "b1"
+TextLabel.TextColor3 = Color3.fromRGB(254, 146, 99)
+TextLabel.TextSize = 40.000
+
 local lib = {
     ["Rainbow"] = true,
     ["Notifications"] = false,
