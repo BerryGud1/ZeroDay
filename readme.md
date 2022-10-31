@@ -1,6 +1,6 @@
 Cretits:
 
-8pmX8 for the ui lib
+7GrandDad for creating vape
 
 RealNefIntent for creating zeroday in minecraft
 
