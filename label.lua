@@ -33,7 +33,7 @@ TextLabel.Size = UDim2.new(0, 527, 0, 5)
 TextLabel.Font = Enum.Font.Ubuntu
 TextLabel.Text = "ZeroDay PRIVATE         Build:1         Current Discord:https://discord.gg/4uy6jpHgaQ"
 TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel.TextSize = 4.000
+TextLabel.TextSize = 14.000
 
 -- Scripts:
 
