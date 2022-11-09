@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/open-source-green)
+![](https://img.shields.io/badge/semi-open-source-green)
 
 The open source parts of the client!
 
