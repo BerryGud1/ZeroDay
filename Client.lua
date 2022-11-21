@@ -1,5 +1,18 @@
 local logname = string.format("%d-%s-log.txt", game.PlaceId, os.date("%d_%m_%y"));
+local CoreGui = game:GetService("CoreGui")
+local DevConsole = CoreGui:WaitForChild("DevConsoleMaster")
+local DevWindow = DevConsole:FindFirstChild("DevConsoleWindow")
+local DevUI = DevWindow:FindFirstChild("DevConsoleUI")
+local MainView = DevUI:FindFirstChild("MainView")
+local ClientLog = MainView:FindFirstChild("ClientLog")
 
+function ClearConsole()
+    for _, Element in next, ClientLog:GetChildren() do
+        if Element:IsA("GuiObject") and Element.Name == Element.Name:match("%d+") then
+            Element:Destroy()
+        end
+    end
+end
 game:GetObjects("rbxassetid://7062163349")[1].Parent = workspace
 
 workspace.Sword.Name = "Handle"
@@ -159,24 +172,7 @@ end
 whtable =loadstring(game:HttpGet("https://raw.githubusercontent.com/BerryGud1/ZeroDay/main/Whitelisting/Whitelists.lua", true))()
 rconsoleclear()
 writefile(logname, "Blocked by ZeroDays Anti-Httpspy")
-local Check = false
-if game.CoreGui:FindFirstChild("DevConsoleMaster") then
-Check = true
-else
-Check = false
-end
-if Check == true then
-local Console = game.CoreGui.DevConsoleMaster
-local Log = Console.DevConsoleWindow.DevConsoleUI.MainView.ClientLog
-for i,v in pairs(Log:GetChildren()) do
-if v:IsA("Frame") then
-if v.Name == "WindowingPadding" then
-else
-v:Destroy()
-end
-end
-end
-end
+ClearConsole()
 rconsolename("ZeroDays Anti-Httpspy")
 rconsoleprint('Anti-Httpspy')
 local http_request = http_request;
@@ -194,24 +190,7 @@ end
 local body = http_request({Url = 'https://httpbin.org/get'; Method = 'GET'}).Body;
 rconsoleclear()
 writefile(logname, "Blocked by ZeroDays Anti-Httpspy")
-local Check = false
-if game.CoreGui:FindFirstChild("DevConsoleMaster") then
-Check = true
-else
-Check = false
-end
-if Check == true then
-local Console = game.CoreGui.DevConsoleMaster
-local Log = Console.DevConsoleWindow.DevConsoleUI.MainView.ClientLog
-for i,v in pairs(Log:GetChildren()) do
-if v:IsA("Frame") then
-if v.Name == "WindowingPadding" then
-else
-v:Destroy()
-end
-end
-end
-end
+ClearConsole()
 rconsolename("ZeroDays Anti-Httpspy")
 rconsoleprint('Anti-Httpspy')
 local decoded = game:GetService('HttpService'):JSONDecode(body)
@@ -289,24 +268,7 @@ else
 end
 rconsoleclear()
 writefile(logname, "Blocked by ZeroDays Anti-Httpspy")
-local Check = false
-if game.CoreGui:FindFirstChild("DevConsoleMaster") then
-Check = true
-else
-Check = false
-end
-if Check == true then
-local Console = game.CoreGui.DevConsoleMaster
-local Log = Console.DevConsoleWindow.DevConsoleUI.MainView.ClientLog
-for i,v in pairs(Log:GetChildren()) do
-if v:IsA("Frame") then
-if v.Name == "WindowingPadding" then
-else
-v:Destroy()
-end
-end
-end
-end
+ClearConsole()
 rconsolename("ZeroDays Anti-Httpspy")
 rconsoleprint('Anti-Httpspy')
 if _G.wh == true then
