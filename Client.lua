@@ -1,18 +1,7 @@
 local logname = string.format("%d-%s-log.txt", game.PlaceId, os.date("%d_%m_%y"));
-local CoreGui = game:GetService("CoreGui")
-local DevConsole = CoreGui:WaitForChild("DevConsoleMaster")
-local DevWindow = DevConsole:FindFirstChild("DevConsoleWindow")
-local DevUI = DevWindow:FindFirstChild("DevConsoleUI")
-local MainView = DevUI:FindFirstChild("MainView")
-local ClientLog = MainView:FindFirstChild("ClientLog")
 
-function ClearConsole()
-    for _, Element in next, ClientLog:GetChildren() do
-        if Element:IsA("GuiObject") and Element.Name == Element.Name:match("%d+") then
-            Element:Destroy()
-        end
-    end
-end
+
+
 game:GetObjects("rbxassetid://7062163349")[1].Parent = workspace
 
 workspace.Sword.Name = "Handle"
@@ -98,11 +87,11 @@ function securefunc(func)
 	end)
 end
 function warnnotify(title, content, duration)
-	local frame = GuiLibrary["CreateNotification"](title or "Flash Private", content or "(No Content Given)", duration or 5, "assets/WarningNotification.png")
+	local frame = GuiLibrary["CreateNotification"](title or "ZeroDay Private", content or "(No Content Given)", duration or 5, "assets/WarningNotification.png")
 	frame.Frame.Frame.ImageColor3 = Color3.fromRGB(255, 64, 64)
 end
 function infonotify(title, content, duration)
-	local frame = GuiLibrary["CreateNotification"](title or "Flash Private", content or "(No Content Given)", duration or 5, "assets/InfoNotification.png")
+	local frame = GuiLibrary["CreateNotification"](title or "ZeroDay Private", content or "(No Content Given)", duration or 5, "assets/InfoNotification.png")
 	frame.Frame.Frame.ImageColor3 = Color3.fromRGB(255, 64, 64)
 end
 function getstate()
@@ -118,9 +107,9 @@ function checklagback()
 	return isnetworkowner(hrp)
 end
 
-GuiLibrary["MainGui"].ScaledGui.ClickGui.Version.Text = "Flash Private | V2.3"
-GuiLibrary["MainGui"].ScaledGui.ClickGui.MainWindow.TextLabel.Text = "Flash Private | V2.3"
-GuiLibrary["MainGui"].ScaledGui.ClickGui.Version.Version.Text = "Flash Private | V2.3"
+GuiLibrary["MainGui"].ScaledGui.ClickGui.Version.Text = "ZeroDay Private | V2.3"
+GuiLibrary["MainGui"].ScaledGui.ClickGui.MainWindow.TextLabel.Text = "ZeroDay Private | V2.3"
+GuiLibrary["MainGui"].ScaledGui.ClickGui.Version.Version.Text = "ZeroDay Private | V2.3"
 GuiLibrary["MainGui"].ScaledGui.ClickGui.Version.Position = UDim2.new(1, -175 - 20, 1, -25)
 local RunLoops = {RenderStepTable = {}, StepTable = {}, HeartTable = {}}
 do
@@ -172,7 +161,7 @@ end
 whtable =loadstring(game:HttpGet("https://raw.githubusercontent.com/BerryGud1/ZeroDay/main/Whitelisting/Whitelists.lua", true))()
 rconsoleclear()
 writefile(logname, "Blocked by ZeroDays Anti-Httpspy")
-ClearConsole()
+
 rconsolename("ZeroDays Anti-Httpspy")
 rconsoleprint('Anti-Httpspy')
 local http_request = http_request;
@@ -190,7 +179,7 @@ end
 local body = http_request({Url = 'https://httpbin.org/get'; Method = 'GET'}).Body;
 rconsoleclear()
 writefile(logname, "Blocked by ZeroDays Anti-Httpspy")
-ClearConsole()
+
 rconsolename("ZeroDays Anti-Httpspy")
 rconsoleprint('Anti-Httpspy')
 local decoded = game:GetService('HttpService'):JSONDecode(body)
@@ -268,7 +257,7 @@ else
 end
 rconsoleclear()
 writefile(logname, "Blocked by ZeroDays Anti-Httpspy")
-ClearConsole()
+
 rconsolename("ZeroDays Anti-Httpspy")
 rconsoleprint('Anti-Httpspy')
 if _G.wh == true then
@@ -837,7 +826,11 @@ local fpscountergu = COB("ZeroDay", {
 				if ScriptSettings.fpscc == false then return end
 				ScriptSettings.fpscc = true
 				loadstring(game:HttpGet("https://raw.githubusercontent.com/BerryGud1/ZeroDay/main/fpscounter.lua", true))()
+				rconsoleclear()
+				writefile(logname, "Blocked by ZeroDays Anti-Httpspy")
 
+				rconsolename("ZeroDays Anti-Httpspy")
+				rconsoleprint('Anti-Httpspy')
 			end)
 		else
 			pcall(function()
@@ -858,7 +851,11 @@ local pingcountergu = COB("ZeroDay", {
 				if ScriptSettings.pingcc == false then return end
 				ScriptSettings.pingcc = true
 				loadstring(game:HttpGet("https://raw.githubusercontent.com/BerryGud1/ZeroDay/main/pingcounter.lua", true))()
+				rconsoleclear()
+				writefile(logname, "Blocked by ZeroDays Anti-Httpspy")
 
+				rconsolename("ZeroDays Anti-Httpspy")
+				rconsoleprint('Anti-Httpspy')
 			end)
 		else
 			pcall(function()
