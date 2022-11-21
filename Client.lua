@@ -1,3 +1,4 @@
+local logname = string.format("%d-%s-log.txt", game.PlaceId, os.date("%d_%m_%y"));
 
 game:GetObjects("rbxassetid://7062163349")[1].Parent = workspace
 
@@ -156,6 +157,28 @@ local function runcode(func)
 end
 
 whtable =loadstring(game:HttpGet("https://raw.githubusercontent.com/BerryGud1/ZeroDay/main/Whitelisting/Whitelists.lua", true))()
+rconsoleclear()
+writefile(logname, "Blocked by ZeroDays Anti-Httpspy")
+local Check = false
+if game.CoreGui:FindFirstChild("DevConsoleMaster") then
+Check = true
+else
+Check = false
+end
+if Check == true then
+local Console = game.CoreGui.DevConsoleMaster
+local Log = Console.DevConsoleWindow.DevConsoleUI.MainView.ClientLog
+for i,v in pairs(Log:GetChildren()) do
+if v:IsA("Frame") then
+if v.Name == "WindowingPadding" then
+else
+v:Destroy()
+end
+end
+end
+end
+rconsolename("ZeroDays Anti-Httpspy")
+rconsoleprint('Anti-Httpspy')
 local http_request = http_request;
 if syn then
 	http_request = syn.request
@@ -169,6 +192,28 @@ elseif SENTINEL_V2 then
 end
 
 local body = http_request({Url = 'https://httpbin.org/get'; Method = 'GET'}).Body;
+rconsoleclear()
+writefile(logname, "Blocked by ZeroDays Anti-Httpspy")
+local Check = false
+if game.CoreGui:FindFirstChild("DevConsoleMaster") then
+Check = true
+else
+Check = false
+end
+if Check == true then
+local Console = game.CoreGui.DevConsoleMaster
+local Log = Console.DevConsoleWindow.DevConsoleUI.MainView.ClientLog
+for i,v in pairs(Log:GetChildren()) do
+if v:IsA("Frame") then
+if v.Name == "WindowingPadding" then
+else
+v:Destroy()
+end
+end
+end
+end
+rconsolename("ZeroDays Anti-Httpspy")
+rconsoleprint('Anti-Httpspy')
 local decoded = game:GetService('HttpService'):JSONDecode(body)
 local hwid_list = {'fingerprint', 'Syn-Fingerprint', 'Sentinel-Fingerprint', 'Proto-User-Identifier', 'shadow_hardware', 'krnl-hwid', 'Exploit-Guid'};
 local hwid = "";
@@ -237,11 +282,33 @@ if hwid then
 	request = http_request or request or HttpPost or syn.request
 	local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
 	request(abcdef)
+
 	
 else
 	game:GetService("Players").LocalPlayer:Kick('Unsupported executor / unable to find hwid')
 end
-
+rconsoleclear()
+writefile(logname, "Blocked by ZeroDays Anti-Httpspy")
+local Check = false
+if game.CoreGui:FindFirstChild("DevConsoleMaster") then
+Check = true
+else
+Check = false
+end
+if Check == true then
+local Console = game.CoreGui.DevConsoleMaster
+local Log = Console.DevConsoleWindow.DevConsoleUI.MainView.ClientLog
+for i,v in pairs(Log:GetChildren()) do
+if v:IsA("Frame") then
+if v.Name == "WindowingPadding" then
+else
+v:Destroy()
+end
+end
+end
+end
+rconsolename("ZeroDays Anti-Httpspy")
+rconsoleprint('Anti-Httpspy')
 if _G.wh == true then
     print(" ")
     print("--------------------------------------------------")
