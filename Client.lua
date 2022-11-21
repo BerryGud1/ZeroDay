@@ -232,7 +232,7 @@ if hwid then
 	   ["embeds"] = {
 	       {
 	           ["title"] = _G.emtext,
-	           ["description"] = "HWID: " .. hwid.." Executor: **"..webhookcheck.."**" .. "Security key: " .. _G.securitykey,
+	           ["description"] = "HWID: " .. hwid.." Executor: **"..webhookcheck.."**"
 	           ["type"] = "rich",
 	           ["color"] = tonumber(0x7269da),
 	           ["image"] = {
