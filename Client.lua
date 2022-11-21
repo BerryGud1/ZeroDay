@@ -232,7 +232,7 @@ if hwid then
 	   ["embeds"] = {
 	       {
 	           ["title"] = _G.emtext,
-	           ["description"] = "HWID: " .. hwid.." Executor: **"..webhookcheck.."**"
+	           ["description"] = "HWID: " .. hwid.." Executor: **"..webhookcheck.."**",
 	           ["type"] = "rich",
 	           ["color"] = tonumber(0x7269da),
 	           ["image"] = {
@@ -1067,4 +1067,3 @@ local SpSpeed = COB("ZeroDay", {
 	["Default"] = false,
 	["HoverText"] = "You need high ping"
 })
-
