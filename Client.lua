@@ -1,6 +1,26 @@
 local logname = string.format("%d-%s-log.txt", game.PlaceId, os.date("%d_%m_%y"));
-
-
+local GuiLibrary = shared.GuiLibrary
+local players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local Client = require(game:GetService("ReplicatedStorage").TS.remotes).default.Client
+local textservice = game:GetService("TextService")
+local repstorage = game:GetService("ReplicatedStorage")
+local lplr = players.LocalPlayer
+local lighting = game:GetService("Lighting")
+local connectionstodisconnect = {}
+local WhitelistFunctions = shared.vapewhitelist
+local targetinfo = shared.VapeTargetInfo
+local collectionservice = game:GetService("CollectionService")
+local uis = game:GetService("UserInputService")
+local mouse = lplr:GetMouse()
+local bedwars = {}
+local bedwarsblocks = {}
+local blockraycast = RaycastParams.new()
+blockraycast.FilterType = Enum.RaycastFilterType.Whitelist
+local getfunctions
+local oldchar
+local oldcloneroot
+local entity = shared.vapeentity
 
 game:GetObjects("rbxassetid://7062163349")[1].Parent = workspace
 
@@ -355,7 +375,57 @@ coroutine.wrap(BFWKPFO_fake_script)()
 
 
 
+local funnyFly = {["Enabled"] = false}
+local funnyAura = {["Enabled"] = false}
 
+runcode(function()
+	local funnyFly 
+	local part
+	local cam = workspace.CurrentCamera
+    funnyFly = GuiLibrary["ObjectsThatCanBeSaved"]["ZeroDayWindow"]["Api"].CreateOptionsButton({
+        ["Name"] = "FunnyFly",
+        ["Function"] = function(callback)
+            if callback then
+                if funnyAura.Enabled then funnyAura.ToggleButton(false) end
+                local origy = entity.character.HumanoidRootPart.Position.y
+                part = Instance.new("Part", workspace)
+                part.Size = Vector3.new(1,1,1)
+                part.Transparency = 1
+                part.Anchored = true
+                part.CanCollide = false
+                cam.CameraSubject = part
+                RunLoops:BindToHeartbeat("FunnyFlyPart", 1, function()
+                    local pos = entity.character.HumanoidRootPart.Position
+                    part.Position = Vector3.new(pos.x, origy, pos.z)
+                end)
+                local cf = entity.character.HumanoidRootPart.CFrame
+                entity.character.HumanoidRootPart.CFrame = CFrame.new(cf.x, 300000, cf.z)
+                if entity.character.HumanoidRootPart.Position.X < 50000 then 
+                    entity.character.HumanoidRootPart.CFrame *= CFrame.new(0, 100000, 0)
+                end
+            else
+                RunLoops:UnbindFromHeartbeat("FunnyFlyPart")
+                local pos = entity.character.HumanoidRootPart.Position
+                local rcparams = RaycastParams.new()
+                rcparams.FilterType = Enum.RaycastFilterType.Whitelist
+                rcparams.FilterDescendantsInstances = {workspace.Map}
+                rc = workspace:Raycast(Vector3.new(pos.x, 300, pos.z), Vector3.new(0,-1000,0), rcparams)
+                if rc and rc.Position then
+                    entity.character.HumanoidRootPart.CFrame = CFrame.new(rc.Position) * CFrame.new(0,3,0)
+                end
+                cam.CameraSubject = lplr.Character
+                part:Destroy()
+                RunLoops:BindToHeartbeat("FunnyFlyVeloEnd", 1, function()
+                    entity.character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+                    entity.character.HumanoidRootPart.CFrame = CFrame.new(rc.Position) * CFrame.new(0,3,0)
+                end)
+                task.wait(1)
+                RunLoops:UnbindFromHeartbeat("FunnyFlyVeloEnd")
+                
+            end
+        end
+    })
+end)
 local cflyswim = COB("ZeroDay", {
 	["Name"] = "CustomSwimFly",
 	["Function"] = function(callback)
@@ -1067,3 +1137,4 @@ local SpSpeed = COB("ZeroDay", {
 	["Default"] = false,
 	["HoverText"] = "You need high ping"
 })
+
