@@ -127,9 +127,9 @@ function checklagback()
 	return isnetworkowner(hrp)
 end
 
-GuiLibrary["MainGui"].ScaledGui.ClickGui.Version.Text = "ZeroDay Private | V2.3"
-GuiLibrary["MainGui"].ScaledGui.ClickGui.MainWindow.TextLabel.Text = "ZeroDay Private | V2.3"
-GuiLibrary["MainGui"].ScaledGui.ClickGui.Version.Version.Text = "ZeroDay Private | V2.3"
+GuiLibrary["MainGui"].ScaledGui.ClickGui.Version.Text = "ZeroDay Private | V2.0"
+GuiLibrary["MainGui"].ScaledGui.ClickGui.MainWindow.TextLabel.Text = "ZeroDay Private | V2.0"
+GuiLibrary["MainGui"].ScaledGui.ClickGui.Version.Version.Text = "ZeroDay Private | V2.0"
 GuiLibrary["MainGui"].ScaledGui.ClickGui.Version.Position = UDim2.new(1, -175 - 20, 1, -25)
 local RunLoops = {RenderStepTable = {}, StepTable = {}, HeartTable = {}}
 do
