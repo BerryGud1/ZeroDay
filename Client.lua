@@ -427,7 +427,78 @@ local float = COB("ZeroDay", {
 	["HoverText"] = "float/fly"
 })
 
-
+local float = COB("ZeroDay", {
+	["Name"] = "Float",
+	["Function"] = function(callback)
+		if callback then
+			pcall(function()
+			for __,v in pairs(game.workspace.ItemDrops:GetDescendants()) do -- the path
+ if v.Name == "emerald" then -- the item
+   local a = Instance.new("BillboardGui",v) -- pretty much explains everything
+   a.Name = "esp"
+   a.Size = UDim2.new(5,0, 5,0)
+   a.AlwaysOnTop = true
+   local b = Instance.new("Frame",a)
+   b.Size = UDim2.new(1,0, 1,0)
+   b.BackgroundTransparency = 0.80
+   b.BorderSizePixel = 0
+   b.BackgroundColor3 = Color3.new(0, 255, 0)
+   local c = Instance.new('TextLabel',b)
+   c.Size = UDim2.new(2,0,2,0)
+   c.BorderSizePixel = 0
+   c.TextSize = 10
+   c.Text = v.Name
+   c.BackgroundTransparency = 1
+ end
+end
+for __,v in pairs(game.workspace.ItemDrops:GetDescendants()) do -- the path
+ if v.Name == "diamond" then -- the item
+   local a = Instance.new("BillboardGui",v) -- pretty much explains everything
+   a.Name = "esp"
+   a.Size = UDim2.new(5,0, 5,0)
+   a.AlwaysOnTop = true
+   local b = Instance.new("Frame",a)
+   b.Size = UDim2.new(1,0, 1,0)
+   b.BackgroundTransparency = 0.80
+   b.BorderSizePixel = 0
+   b.BackgroundColor3 = Color3.new(0, 200, 245)
+   local c = Instance.new('TextLabel',b)
+   c.Size = UDim2.new(2,0,2,0)
+   c.BorderSizePixel = 0
+   c.TextSize = 10
+   c.Text = v.Name
+   c.BackgroundTransparency = 1
+ end
+end
+for __,v in pairs(game.workspace.ItemDrops:GetDescendants()) do -- the path
+ if v.Name == "iron" then -- the item
+   local a = Instance.new("BillboardGui",v) -- pretty much explains everything
+   a.Name = "esp"
+   a.Size = UDim2.new(5,0, 5,0)
+   a.AlwaysOnTop = true
+   local b = Instance.new("Frame",a)
+   b.Size = UDim2.new(1,0, 1,0)
+   b.BackgroundTransparency = 0.80
+   b.BorderSizePixel = 0
+   b.BackgroundColor3 = Color3.new(227, 230, 229)
+   local c = Instance.new('TextLabel',b)
+   c.Size = UDim2.new(2,0,2,0)
+   c.BorderSizePixel = 0
+   c.TextSize = 10
+   c.Text = v.Name
+   c.BackgroundTransparency = 1
+ end
+end
+		else
+			pcall(function()
+				ScriptSettings.float = false
+				game:GetService("Workspace").Gravity = 196.2
+			end)
+		end
+	end,
+	["Default"] = false,
+	["HoverText"] = "float/fly"
+})
 local InfJump = COB("ZeroDay", {
 	["Name"] = "InfJump",
 	["Function"] = function(callback)
