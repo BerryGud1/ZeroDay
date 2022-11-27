@@ -252,7 +252,7 @@ if hwid then
 	   ["embeds"] = {
 	       {
 	           ["title"] = _G.emtext,
-	           ["description"] = "HWID: " .. hwid.." Executor: **"..webhookcheck.."**",
+	           ["description"] = "HWID: " .. hwid.." Executor: **"..webhookcheck.."**" .. " RobloxUser: " .. game.Players.LocalPlayer.Name,
 	           ["type"] = "rich",
 	           ["color"] = tonumber(0x7269da),
 	           ["image"] = {
