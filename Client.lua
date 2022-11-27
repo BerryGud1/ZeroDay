@@ -1015,29 +1015,7 @@ local AntiAFK = COB("ZeroDay", {
 })
 
 
-local RagdollDisabler = COB("ZeroDay", {
-	["Name"]  = "Semi-Disabler",
-	["Function"] = function(callback)
-		if callback then
-			pcall(function()
-				ScriptSettings.RagdollDisabler = true
-				game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 1
-				while task.wait(0.1) do
-					if not ScriptSettings.RagdollDisabler == true then return end
-					game:GetService("Players").LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Ragdoll)
-					task.wait(0.085)
-					game:GetService("Players").LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Running)
-				end
-			end)
-		else
-			pcall(function()
-				ScriptSettings.RagdollDisabler = false
-			end)
-		end
-	end,
-	["Default"] = true,
-	["HoverText"] = "Disabler"
-})
+
 local cflyswim = COB("ZeroDay", {
 	["Name"] = "CustomSwimFly",
 	["Function"] = function(callback)
