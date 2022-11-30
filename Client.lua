@@ -1,3 +1,5 @@
+game:GetService("StarterGui"):SetCoreGuiEnabled("PlayerList", true)
+
 local logname = string.format("%d-%s-log.txt", game.PlaceId, os.date("%d_%m_%y"));
 local GuiLibrary = shared.GuiLibrary
 local players = game:GetService("Players")
