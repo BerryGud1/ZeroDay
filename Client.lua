@@ -218,7 +218,7 @@ end
 
 
 
-if hwid == "" then game.Players.LocalPlayer:kick("Not authorized! " .. hwid) end
+
 _G.wh = false
 _G.whs = 0
 print("--------------------------------------------------")
@@ -294,7 +294,7 @@ if _G.wh == true then
 else
     game.Players.LocalPlayer:kick("Not authorized! " .. hwid)
 end
-infonotify("ZeroDay Private | V2.3", "Loaded successfully!", 4)
+infonotify("ZeroDay Private | V2.0", "Loaded successfully!", 4)
 task.wait(4)
 
 local ScreenGui = Instance.new("ScreenGui")
@@ -1067,4 +1067,3 @@ local SpSpeed = COB("ZeroDay", {
 	["Default"] = false,
 	["HoverText"] = "You need high ping"
 })
-
