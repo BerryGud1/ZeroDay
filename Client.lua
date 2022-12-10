@@ -481,7 +481,41 @@ local AnimDisabler = COB("ZeroDay", {
 	["Default"] = false,
 	["HoverText"] = "Disables your animation"
 })
-
+runcode(function()
+    local vapecapeconnection
+    GuiLibrary["ObjectsThatCanBeSaved"]["ZeroDayWindow"]["Api"].CreateOptionsButton({
+        ["Name"] = "AnimatedCape",
+        ["Function"] = function(callback)
+            if callback then
+                vapecapeconnection = lplr.CharacterAdded:connect(function(char)
+                    task.spawn(function()
+                        pcall(function() 
+                            Cape(char, getcustomassetfunc("vape/assets/CapeBeta.webm"))
+                        end)
+                    end)
+                end)
+                if lplr.Character then
+                    task.spawn(function()
+                        pcall(function() 
+                            Cape(lplr.Character, getcustomassetfunc("vape/assets/CapeBeta.webm"))
+                        end)
+                    end)
+                end
+            else
+                if vapecapeconnection then
+                    vapecapeconnection:Disconnect()
+                end
+                if lplr.Character then
+                    for i,v in pairs(lplr.Character:GetDescendants()) do
+                        if v.Name == "Cape" then
+                            v:Remove()
+                        end
+                    end
+                end
+            end
+        end
+    })
+end)
 local Shaders = COB("ZeroDay", {
 	["Name"] = "Shaders",
 	["Function"] = function(callback)
